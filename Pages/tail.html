@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/main.css">
+    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="../src/main.js"></script>
     <title>Tailwind</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="bg-slate-800 w-full">
+            <div class="flex flex-row mr-auto ml-auto md:w-[68.1vw] sm:w-[80vw] w-[90vw]">
+                <a class="w-fit text-xl mt-3.5 mb-3.5 text-stone-200" href="index.html">DT193G - Moment 1</a>
+                <button class="md:hidden w-fit h-fit ml-auto self-center cursor-pointer pl-5 pr-5 border-2 text-2xl" id="menu-btn">☰</button>
+                <div class="md:ml-auto w-fit md:content-center content-end">
+                    <ul class="hidden md:flex md:flex-row gap-4 md:w-full md:relative absolute right-0 w-full text-center bg-slate-800 " id="menu-ul">
+                        <li class="flex">
+                            <a class="text-stone-400 hover:text-stone-200 duration-300 flex-1 leading-10" href="index.html">Startsida</a>
+                        </li>
+                        <li class="flex">
+                            <a class="text-stone-200 flex-1 leading-10" href="tail.html">Tailwind</a>
+                        </li>
+                        <li class="flex">
+                            <a class="text-stone-400 hover:text-stone-200 duration-300 flex-1 leading-10" href="boot.html">Bootstrap</a>
+                        </li>
+                        <li class="flex">
+                            <a class="text-stone-400 hover:text-stone-200 duration-300 flex-1 leading-10" href="publish.html">Publicering</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="mr-auto ml-auto w-[68.1vw]">
+        <h1 class="text-4xl font-bold mt-3 md:mt-7 text-stone-200">Tailwind</h1>
+    </main>
+    <footer class="bg-slate-800 w-full text-center pt-4 pb-8 fixed bottom-0 text-stone-200">
+        <p>© 2025 Isaac Svedin</p>
+    </footer>
 </body>
 </html>
