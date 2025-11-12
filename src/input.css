@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+@layer base {
+    div:has(:first-child:is(label)) {
+        @apply flex flex-col gap-y-1;
+    }
+}
+
+@layer components {
+    .custom-rows>tbody>tr {
+        @apply align-text-top bg-slate-700;
+    }
+
+    .custom-rows>tbody>tr:nth-child(even) {
+        @apply bg-slate-800;
+    }
+
+    .custom-rows>tbody>tr>td {
+        @apply px-2 border-2 border-green-700;
+    }
+
+    .custom-rows>thead>tr>th {
+        @apply px-2 text-justify border-2 border-green-700 bg-slate-800;
+    }
+
+    .custom-rows>tbody>tr:hover {
+        @apply brightness-110;
+    }
+}

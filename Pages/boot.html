@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,11 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../src/styles.css">
+    <script defer src="/src/creature.js"></script>
+    <link rel="stylesheet" href="/src/styles.css">
     <title>Bootstrap</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -41,9 +44,92 @@
     </header>
     <main class="container my-2 my-md-4">
         <h1 class="text-light">Bootstrap</h1>
+        <div class="card-group justify-content-between column-gap-5">
+            <div class="card border-0 rounded-3 text-bg-dark custom-max-width">
+                <div class="card-body">
+                    <h2 class="card-title">Info</h2>
+                    <p class="card-text">
+                        Ramverket <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> har till uppgift att
+                        underlätta och snabba på utvecklandet av design för
+                        webbplatser. Bootstrap, till skillnad från Tailwind, innehåller mer "färdiga" komponenter som
+                        gör det enklare och snabbare, men svårare att
+                        anpassa teman och i vissa fall layout.
+                    </p>
+                </div>
+            </div>
+            <div class="card border-0 rounded-3 text-bg-dark custom-max-width">
+                <div class="card-body">
+                    <h2 class="card-title">Utvärdering</h2>
+                    <p class="card-text">
+                        Jag tyckte Bootstrap var snabbt och smidigt, samt enklare än Tailwind. Fördelen med Bootstrap
+                        var att det var enkelt att komma igång med och att
+                        de "färdiga" komponenterna som cards och tables gjorde arbetet enkelt. Eftersom raderna i
+                        tabellen skrivs ut med JavaScript och att jag ville
+                        kunna återanvända JS-filen så mycket som möjligt, var det skönt att enbart behöva sätta styling
+                        på table-elementet. En annan fördel var att jag inte behövde
+                        skriva egen JS kod för navigeringsmenyn. Nackdelen med Bootstrap är att den ger för mycket och
+                        är bättre för mindre projekt eller där designen bara ska fungera.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive mt-3">
+            <table class="table table-striped table-bordered border-success table-dark table-hover user-select-none">
+                <caption class="caption-top text-light">Fantasy Creatures</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Rank</th>
+                        <th scope="col">World</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody id="container-TBODY"></tbody>
+            </table>
+        </div>
+        <form class="w-75 custom-max-width mx-auto mt-3 needs-validation" id="creature-FORM">
+            <fieldset class="d-inline-flex flex-row flex-wrap align-content-center column-gap-5">
+                <legend class="text-light">List Fantasy Creature</legend>
+                <div class="flex-grow-1 mb-4">
+                    <label for="InputName" class="form-label text-light user-select-none">Name</label>
+                    <input id="InputName" name="name" type="text" placeholder="Name of creature..."
+                        class="form-control text-bg-dark custom-placeholder" required>
+                </div>
+                <div class="flex-grow-1 mb-4">
+                    <label for="SelectDangerRank" class="form-label text-light user-select-none">Rank</label>
+                    <select id="SelectDangerRank" name="rank" class="form-select text-bg-dark">
+                        <option value="F" selected>F</option>
+                        <option value="E">E</option>
+                        <option value="D">D</option>
+                        <option value="C">C</option>
+                        <option value="B">B</option>
+                        <option value="A">A</option>
+                        <option value="S">S</option>
+                        <option value="Legendary">Legendary</option>
+                        <option value="Mythic">Mythic</option>
+                    </select>
+                </div>
+                <div class="align-self-end d-flex flex-grow-1 column-gap-2 form-check form-switch mb-4">
+                    <input id="CheckIsUnderworldCreature" name="underworldcreature" type="checkbox" class="form-check-input bg-dark">
+                    <label for="CheckIsUnderworldCreature" class="form-label text-light user-select-none">Underworld
+                        creature</label>
+                </div>
+                <div class="flex-grow-1 w-100 mb-5">
+                    <label for="TextAreaDesc" class="form-label text-light user-select-none">Description</label>
+                    <textarea id="TextAreaDesc" name="desc" placeholder="Description of creature..."
+                        class="form-control text-bg-dark custom-placeholder h-100" required></textarea>
+                </div>
+                <div class="ms-auto mt-2">
+                    <button type="submit" class="btn btn-success px-4" id="submit-BTN">Skapa</button>
+                </div>
+            </fieldset>
+        </form>
     </main>
-    <footer class="text-bg-dark text-center py-3 fixed-bottom">
+    <footer class="text-bg-dark text-center py-3">
         <p>© 2025 Isaac Svedin</p>
     </footer>
 </body>
+
 </html>
